@@ -1,0 +1,5 @@
+title: Hello, world!
+author: Malcolm
+date: 2011/07/20
+
+Hello, world!
