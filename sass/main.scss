@@ -1,15 +1,19 @@
+@import "reset";
+
 html { margin: 20px }
 body {
-  margin: 0 auto;
+  
   font-family: 'Arial';
   font-size: 16px;
   padding: 15px;
-  width: 720px;
+  
 }
 header, footer, section, article {
 	display: block;
 }
 #content {
+    margin: 0 auto;
+    width: 720px;
 }
 #by {
 	font-style: italic;
@@ -78,7 +82,6 @@ body > header > h1 {
 body > header {
 	display: block;
 	padding-top: 30px;
-	line-height: 180px;
 	margin-bottom: 20px;
 }
 h1, h2, h3, h4 {
