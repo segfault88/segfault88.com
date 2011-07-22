@@ -1,32 +1,106 @@
 @import "reset";
 
-html { margin: 20px }
+$background-color: #2e2e2e;
+$header-color: #a5c3f9;
+$header-background-color: #3c63ae;
+$header-border-color: darken($header-background-color, 5%);
+$content-background-color: #fefeff;
+
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($radius, $color) {
+  box-shadow: $radius $color;
+  -moz-box-shadow: $radius $color;
+  -webkit-box-shadow: $radius $color;
+}
+
+html { }
 body {
-  
-  font-family: 'Arial';
-  font-size: 16px;
-  padding: 15px;
-  
+  font-family: arial, helvetica, sans-serif;
+  font-size: 16px;  
+  background-color: $background-color;
+  color: #333;
 }
 header, footer, section, article {
-	display: block;
+  display: block;
+}
+#header {
+  background-color: $header-background-color;
+  padding: 15px 15px 15px 50px;
+  border-bottom: 2px solid $header-border-color;
+  color: $header-color;
+  font-family: 'Didact Gothic', sans-serif;
+  height: 46px;
+  
+  h1 {
+    font-size: 200%;
+  }
+  
+  ul {
+    float: right;
+    background-color: darken($header-background-color, 5%);
+    padding: 15px 25px;
+    margin-right: 20px;
+    @include rounded-corners(5px);
+    
+    li {
+      float: left;
+      padding-left: 20px;
+      margin-left: 20px;
+      border-left: 2px solid $header-background-color;
+      
+      &#first {
+        padding-left: 0px;
+        margin-left: 0px;
+        border-left: none;
+      }
+      
+      a {
+        color: $header-color;
+        font-family: 'Didact Gothic', sans-serif;
+        
+        &:hover {
+          color: lighten($header-color, 10%);
+        }
+      }
+    }
+  }
 }
 #content {
-    margin: 0 auto;
-    width: 720px;
+  margin: 0 auto;
+  width: 800px;
+  padding: 50px 25px;
+  margin-top: 25px;
+  background-color: $content-background-color;
+  line-height: 120%;
+  @include rounded-corners(15px);
+  @include box-shadow(10px 10px 5px, darken($background-color, 2%));
+  
+  h1 {
+    padding-bottom: 10px;
+    display: block;
+  }
+  
+  p {
+    padding: 20px 0px;
+  }
 }
 #by {
-	font-style: italic;
+  font-style: italic;
   margin-right: 5px;
-	font-size: 28px;
+  font-size: 28px;
 }
 #caption {
-	position: absolute;
-	font-size: 24px;
-	margin: -135px 0 0 70px;
+  position: absolute;
+  font-size: 24px;
+  margin: -135px 0 0 70px;
 }
 #path {
-	color: #b53131;
+  color: #b53131;
 }
 .date {
   font-style: italic;
@@ -35,33 +109,35 @@ header, footer, section, article {
   margin-right: 30px;
 }
 a {
-  color: #b83000;
+  color: $header-border-color;
+  font-family: 'Didact Gothic', sans-serif;
 }
 h1 a {
-  color: black;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 body > header > h1 {
-	border-left: 30px solid black;
-	padding-left: 30px;
+  border-left: 30px solid black;
+  padding-left: 30px;
   font-size: 201px;
   margin: 100px 0 15px 0;
   font-weight: normal;
 }
 .post header {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 .post .body p:first-child {
-	margin-top: 0;
+  margin-top: 0;
 }
 .post .body p:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .post {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #888;
 }
 .post:last-child {
   margin-bottom: 10px;
@@ -80,9 +156,8 @@ body > header > h1 {
 }
 .more a:hover { text-decoration: underline }
 body > header {
-	display: block;
-	padding-top: 30px;
-	margin-bottom: 20px;
+  display: block;
+  margin-bottom: 20px;
 }
 h1, h2, h3, h4 {
   display: inline;
@@ -93,10 +168,16 @@ ul, li {
   list-style-type: none;
 }
 code {
+  padding: 30px;
+  background-color: #ddd;
   font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
 }
 pre {
-  padding: 20px;
+  padding: 30px;
+  background-color: #ddd;
+  font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
+  @include rounded-corners(5px);
+  @include box-shadow(5px 5px 2px, darken(#eee, 10%));
 }
 blockquote {
   font-style: italic;
@@ -105,7 +186,8 @@ blockquote {
 body > footer {
   text-align: left;
   margin-left: 10px;
-	font-style: italic;
-  font-size: 18px;
+  font-style: italic;
+  font-size: 80%;
   color: #888;
+  margin: 20px 10px 50px 10px;
 }

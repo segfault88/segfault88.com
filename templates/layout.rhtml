@@ -1,23 +1,29 @@
 <!doctype html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Didact+Gothic&v2' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
     <title><%= title %></title>
   </head>
   <body>
-    <header>
-      segfault88.com
-    </header>
+    <div id="header">
+      <ul>
+        <li id="first"><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/archives">Archives</a></li>
+      </ul>
+      <h1>SegFault88.com</h1>
+    </div>
     <div id="content">
       <section>
         <%= yield %> 
       </section>
-      <footer>
-        powered by <a href="http://cloudhead.io/toto">toto</a>
-      </footer>
     </div>
+    <footer>
+      powered by <a href="http://cloudhead.io/toto">toto</a>
+    </footer>
   </body>
 </html>
 
