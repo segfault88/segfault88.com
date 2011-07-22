@@ -1,0 +1,22 @@
+title: Sass watch CarbonCore FS Events
+author: Malcolm
+date: 2011-07-22
+
+Just a quick note for future reference. While running Sass on OSX with the "watch" flag and you get the message:
+
+<pre>
+Warning: Unable to load CarbonCore. FSEvents will be unavailable.
+</pre>
+
+This probably caused by running a custom version of Ruby - for example with RVM which doesn't install the Carbon MacRuby library. This isn't a show stopper since it will fall back to polling for changes - which doesn't work all that well. Although it is possible to install MacRuby for a custom install of Ruby a simpler solution exists.
+
+* First install the rb-rsevents gem. This gives the same functionality without requiring the MacRuby stuff.
+* Install a newer version of the fssm gem which Sass uses to watch for file changes. A newer version includes support for watching for file changes using rb-rsevents. I am using 0.2.7 - and that seems to work fine.
+
+Simply:
+<pre>
+gem install rb-fsevents
+gem install fssm
+</pre>
+
+Should do the trick. Good luck!
