@@ -4,4 +4,11 @@ date: 2011/07/20
 
 Hello, world!
 
-Test.
+This is my attempt to do some stuff and get more involved with the community. I have created this
+site in the hopes of (eventually) doing something useful. I have made a new Github and Twitter
+account too - so if you want, feel free to leave a comment or ping me on Twitter or Github. 
+
+* <a href="http://twitter.com/#!/segfault88">My New Twitter</a>
+* <a href="https://github.com/segfault88">My New Github</a>
+
+Anyway, have fun :).
