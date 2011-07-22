@@ -1,4 +1,4 @@
-title: Sass watch CarbonCore FS Events
+title: Sass CarbonCore FS Events
 author: Malcolm
 date: 2011-07-22
 
