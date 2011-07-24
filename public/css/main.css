@@ -164,7 +164,7 @@ body > header > h1 {
   margin: 10px 0; }
 
 .post .more {
-  margin-top: -10px;
+  margin-top: 10px;
   margin-right: 30px;
   font-style: italic;
   text-align: right; }
