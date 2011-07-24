@@ -171,13 +171,15 @@ code {
   padding: 30px;
   background-color: #ddd;
   font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
+  @include rounded-corners(5px);
+  @include box-shadow(5px 5px 2px, darken(#eee, 20%));
 }
 pre {
   padding: 30px;
   background-color: #ddd;
   font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
   @include rounded-corners(5px);
-  @include box-shadow(5px 5px 2px, darken(#eee, 10%));
+  @include box-shadow(5px 5px 2px, darken(#eee, 20%));
 }
 blockquote {
   font-style: italic;

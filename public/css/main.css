@@ -46,6 +46,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* end _reset.scss */
 body {
   font-family: arial, helvetica, sans-serif;
   font-size: 16px;
@@ -189,7 +190,13 @@ ul, li {
 code {
   padding: 30px;
   background-color: #ddd;
-  font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono; }
+  font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  box-shadow: 5px 5px 2px #bbbbbb;
+  -moz-box-shadow: 5px 5px 2px #bbbbbb;
+  -webkit-box-shadow: 5px 5px 2px #bbbbbb; }
 
 pre {
   padding: 30px;
@@ -198,9 +205,9 @@ pre {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  box-shadow: 5px 5px 2px #d4d4d4;
-  -moz-box-shadow: 5px 5px 2px #d4d4d4;
-  -webkit-box-shadow: 5px 5px 2px #d4d4d4; }
+  box-shadow: 5px 5px 2px #bbbbbb;
+  -moz-box-shadow: 5px 5px 2px #bbbbbb;
+  -webkit-box-shadow: 5px 5px 2px #bbbbbb; }
 
 blockquote {
   font-style: italic; }
