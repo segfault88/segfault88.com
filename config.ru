@@ -34,7 +34,7 @@ toto = Toto::Server.new do
 
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
   
-  set :url, 'http://segfault88.heroku.com/'
+  set :url, 'http://segfault88.com/'
 end
 
 run toto
