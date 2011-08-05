@@ -1,4 +1,8 @@
-gem 'toto', :ref => 'e05ec70'
+require 'rubygems'
+require 'bundler'
+
+Bundler.require
+
 require 'toto'
 
 # Rack config
