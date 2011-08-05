@@ -1,4 +1,4 @@
-gem 'toto'
+gem 'toto', :ref => 'e05ec70'
 require 'toto'
 
 # Rack config
