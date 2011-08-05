@@ -1,6 +1,6 @@
 title: Sass CarbonCore FS Events
 author: Malcolm
-date: 2011-07-22
+date: 2011-08-05
 
 Just a quick note for future reference. While running Sass on OSX with the "watch" flag and you get the message:
 
