@@ -21,7 +21,7 @@ $content-background-color: #fefeff;
 html { }
 body {
   font-family: arial, helvetica, sans-serif;
-  font-size: 16px;  
+  font-size: 14px;  
   background-color: $background-color;
   color: #333;
 }
@@ -72,7 +72,7 @@ header, footer, section, article {
 }
 #content {
   margin: 0 auto;
-  width: 800px;
+  width: 90%;
   padding: 50px 25px;
   margin-top: 25px;
   background-color: $content-background-color;
@@ -118,11 +118,9 @@ h1 a {
 a:hover {
   text-decoration: underline;
 }
-body > header > h1 {
-  border-left: 30px solid black;
-  padding-left: 30px;
-  font-size: 201px;
-  margin: 100px 0 15px 0;
+body header h1 {
+  /*padding-left: 20px;*/
+  font-size: 20px;
   font-weight: normal;
 }
 .post header {
@@ -167,19 +165,19 @@ h1, h2, h3, h4 {
 ul, li {
   list-style-type: none;
 }
-code {
+
+@mixin code() {
   padding: 30px;
   background-color: #ddd;
   font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
   @include rounded-corners(5px);
   @include box-shadow(5px 5px 2px, darken(#eee, 20%));
 }
+code {
+  @include code();
+}
 pre {
-  padding: 30px;
-  background-color: #ddd;
-  font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
-  @include rounded-corners(5px);
-  @include box-shadow(5px 5px 2px, darken(#eee, 20%));
+  @include code();
 }
 blockquote {
   font-style: italic;
