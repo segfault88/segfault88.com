@@ -1,4 +1,4 @@
-
+gem 'toto'
 require 'toto'
 
 # Rack config
