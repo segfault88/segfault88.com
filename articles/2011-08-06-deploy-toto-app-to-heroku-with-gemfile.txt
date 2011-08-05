@@ -1,0 +1,23 @@
+title: Deploy Toto App to Heroku with Gemfile
+author: Malcolm
+date: 2011-08-06
+
+
+Well, this is totally obvious - but unfortunately it wasn't for me. I have been messing around with creating a [Toto](http://cloudhead.io/toto) based blog for a little while. However today I needed to use a custom version of a gem (namely my fork of Toto itself), while the solution to use Bundler is totally obvious, getting it actually working was not soo obvious for me.
+
+So create your Gemfile, bundle and push to Heroku. Now if you are like me your application will immediately crash and you will have something like this in your log:
+<pre>
+2011-08-05T04:18:34+00:00 heroku[web.1]: Starting process with command `thin -p 59844 -e production -R /home/heroku_rack/heroku.ru start` 
+2011-08-05T04:18:34+00:00 app[web.1]: /usr/ruby1.9.2/lib/ruby/1.9.1/rubygems.rb:762:in `report_activate_error': Could not find RubyGem toto (>= 0) (Gem::LoadError) 
+2011-08-05T04:18:34+00:00 app[web.1]: from /usr/ruby1.9.2/lib/ruby/1.9.1/rubygems.rb:219:in `activate' 
+2011-08-05T04:18:34+00:00 app[web.1]: from /usr/ruby1.9.2/lib/ruby/1.9.1/rubygems.rb:1065:in `gem' 
+2011-08-05T04:18:34+00:00 app[web.1]: from config.ru:1:in `block (3 levels) in <main>' 
+2011-08-05T04:18:34+00:00 app[web.1]: from /home/heroku_rack/heroku.ru:23:in `eval'
+</pre>
+
+What is the problem? Well, I spent a while looking around through Heroku's docs and couldn't see anything helpful even on their [Gem bundler page](http://devcenter.heroku.com/articles/bundler). Had I actually gone to the [Bundler website](http://gembundler.com/) itself I would have seen the (very easy) solution.
+
+Simply add this to the top of your config.ru file before any existing require calls:
+<script src="https://gist.github.com/1126943.js?file=gistfile1.rb"></script>
+
+Thats it! Pretty easy.
