@@ -1,0 +1,34 @@
+title: Rails Sub-Resource URLs
+author: Malcolm
+date: 2011-08-17
+
+I commonly use sub-resources fairly heavily in my Ruby on Rails applications. For example, I will have Users nested under both Customers and Suppliers. This works great, since you can reach users as:
+
+<pre>
+/users/1
+/customers/1/users/1
+/suppliers/1/users/1
+</pre>
+
+Want the users for customer 1? Go to /customers/1/users/. Want to create a new user for supplier 1? Go to /suppliers/1/users/new. The problem comes when you need to create a url for this sub-resource. For example to create a user url: you might have a @customer, @supplier or neither. It seems like the way to do this would be to have some messy code - a monstrosity something like:
+
+<pre>
+<%= link_to "Edit", (@customer.blank? ? (@supplier.blank? ? edit_user_url(@user) : edit_supplier_user_url(@supplier, @user)) : edit_customer_user_url(@customer, @user)) %>
+</pre>
+
+However the real solution (like most things when working in Ruby on Rails) is extremely easy. Creating a route for a sub-resource is as simple as using polymorphic_url - this does all of the magic successfully. However, it is a bit of typing - so dump the following into a new file called "my_url.rb" in your lib directory:
+
+<script src="https://gist.github.com/1150989.js?file=my_url.rb"></script>
+
+Then add "include MyUrl" to your application_controller and application_helper so these methods are available both in your controllers and views.
+
+Using this couldn't be simpler.
+
+<script src="https://gist.github.com/1150995.js?file=gistfile1.rb"></script>
+
+Easy!
+
+There is however a small caveat. That is the overall combination of parameters to a my_url method must be valid. For example, if you must have a customer or supplier (going to /users directly is not allowed by your routes configuration) for a user url - calling my_url with both @customer and @supplier (as in my example above) nil will result in a confusing looking error starting with "No route for". So be careful - these problems are not always completely obvious.
+
+Happy hacking!
+
